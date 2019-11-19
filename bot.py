@@ -12,6 +12,8 @@ IGUSER = "user"  # Change to your Instagram USERNAME
 PASSWD = "*****"  # Change to your Instagram Password
 # Change to your Photo Hashtag
 
+IGCaption1 = 'SUA LEGENDA' # você pode criar diversas legendas e por um random dentro do for e com isso cria diversas legendas
+
 os.chdir(PhotoPath)
 ListFiles = sorted([f for f in listdir(PhotoPath) if isfile(join(PhotoPath, f))])
 print(ListFiles)
@@ -24,7 +26,7 @@ igapi.login()  # login
 for i, _ in enumerate(ListFiles):
     photo = ListFiles[i]
     print(photo)
-    rand = random.choice(IGCaption11)
+    #rand = random.choice(IGCaption11)
     print("Progress :" + str([i + 1]) + " of " + str(len(ListFiles)))
     print("Now Uploading this photo to instagram: " + photo)
     igapi.uploadPhoto(photo, caption=IGCaption1, upload_id=None)
